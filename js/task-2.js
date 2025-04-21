@@ -1,4 +1,3 @@
-
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -26,16 +25,12 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery');
 
-const galleryMarkup = images
+const galleryItems = images
   .map(({ url, alt }) => {
-    return `
-      <li class="gallery-item">
-        <img src="${url}" alt="${alt}" class="gallery-image">
-      </li>`;
+    return `<li class="gallery-item"><img src="${url}" alt="${alt}" class="gallery-image"></li>`;
   })
   .join('');
 
-gallery.insertAdjacentHTML('beforeend', galleryMarkup);
-
+galleryList.insertAdjacentHTML('beforeend', galleryItems);
